@@ -38,33 +38,4 @@ A full-stack web application to manage employees, track daily attendance, and vi
 - pg (node-postgres)
 
 
- ### Backend
--cd employee_backend
--npm install
--node app.js
--Make sure PostgreSQL is running and .env contains your DB credentials.
-
-### Frontend
--bash
--Copy
--Edit
--cd employee_frontend
--npm install
--ng serve
-✅ Backend
-bash
-Copy
-Edit
-cd employee_backend
-npm install
-node app.js
-Make sure PostgreSQL is running and .env contains your DB credentials.
-
-✅ Frontend
-bash
-Copy
-Edit
-cd employee_frontend
-npm install
-ng serve
 
