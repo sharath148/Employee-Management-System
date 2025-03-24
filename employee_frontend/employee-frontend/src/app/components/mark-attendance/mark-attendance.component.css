@@ -1,0 +1,72 @@
+/* Overall Layout */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Sidebar Styling */
+  .sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    position: fixed;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar nav button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #34495e;
+    border: none;
+    color: #ecf0f1;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: left;
+  }
+  
+  .sidebar nav button:hover,
+  .sidebar nav button.active-link {
+    background-color: #1abc9c;
+  }
+  
+  /* Main Content Styling */
+  .content {
+    margin-left: 240px;
+    padding: 30px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #34495e;
+  }
+  
+  .mark-btn {
+    padding: 12px 24px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .mark-btn:hover {
+    background-color: #3498db;
+  }
+  
+  /* Status Message */
+  .status-message {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    color: #2c3e50;
+  }
+  

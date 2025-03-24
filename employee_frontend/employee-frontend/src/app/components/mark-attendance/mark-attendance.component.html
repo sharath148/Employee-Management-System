@@ -1,0 +1,16 @@
+<div class="sidebar">
+    <h2>Employee Panel</h2>
+    <nav>
+      <button routerLink="/mark-attendance" routerLinkActive="active-link">Mark Attendance</button>
+      <button routerLink="/login" (click)="logout()">Logout</button>
+    </nav>
+  </div>
+  
+  <div class="content">
+    <h1>Mark Your Attendance</h1>
+    
+    <button (click)="markPresent()" class="mark-btn">Mark as Present</button>
+  
+    <p *ngIf="statusMessage" class="status-message">{{ statusMessage }}</p>
+  </div>
+  

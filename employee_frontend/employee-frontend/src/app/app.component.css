@@ -1,0 +1,31 @@
+/* Basic Navigation Styling */
+nav {
+    background-color: #f0f0f0;
+    padding: 15px;
+  }
+  
+  nav h2 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  nav a.active {
+    font-weight: bold;
+    color: #007bff;
+  }
+  

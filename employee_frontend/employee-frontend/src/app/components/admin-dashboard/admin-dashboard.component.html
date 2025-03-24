@@ -1,0 +1,105 @@
+<nav class="sidebar">
+    <h2>Admin Panel</h2>
+    <button (click)="selectSection('dashboard')">Dashboard</button>
+    <button (click)="selectSection('users')">Manage Users</button>
+    <button (click)="selectSection('attendance')">Attendance Records</button>
+    <button (click)="logout()">Logout</button>
+</nav>
+
+<div class="content">
+    <!-- Dashboard Section -->
+    <div *ngIf="selectedSection === 'dashboard'">
+        <h1>Welcome, Admin! 🎉</h1>
+        <p>Manage your employees and attendance records efficiently.</p>
+
+        <h3>Department Composition</h3>
+        <div class="chart-container">
+            <canvas
+              baseChart
+              [data]="pieChartData"
+              [type]="pieChartType"
+              [options]="pieChartOptions">
+            </canvas>
+
+            <h3>Today's Attendance (Bar Chart)</h3>
+            <canvas
+              baseChart
+              [data]="barChartData"
+              [type]="barChartType"
+              [options]="barChartOptions">
+            </canvas>
+          </div>
+          
+      
+    </div>
+
+    <!-- Manage Users Section -->
+    <div *ngIf="selectedSection === 'users'">
+        <h3>Add New Employee</h3>
+        <form (ngSubmit)="addEmployee()">
+            <input type="text" placeholder="Username" [(ngModel)]="newEmployee.username" name="username" required>
+            <input type="password" placeholder="Password" [(ngModel)]="newEmployee.password" name="password" required>
+            <select [(ngModel)]="newEmployee.role" name="role" required>
+                <option value="employee">Employee</option>
+                <option value="admin">Admin</option>
+            </select>
+            <input type="text" placeholder="Name" [(ngModel)]="newEmployee.name" name="name" required>
+            <input type="text" placeholder="Department" [(ngModel)]="newEmployee.department" name="department" required>
+            <input type="email" placeholder="Email" [(ngModel)]="newEmployee.email" name="email" required>
+            <button type="submit">Add Employee</button>
+        </form>
+
+        <p class="success" *ngIf="message">{{ message }}</p>
+        <p class="error" *ngIf="error">{{ error }}</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees">
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.department }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.role }}</td>
+                    <td>
+                        <button class="delete-btn" (click)="deleteEmployee(employee.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+   <!-- Attendance Section -->
+<div *ngIf="selectedSection === 'attendance'">
+    <h3>Attendance Records</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Total Present Days</th>
+          <th>Total Absent Days</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of attendanceRecords">
+          <td>{{ record.name }}</td>
+          <td>{{ record.department }}</td>
+          <td>{{ record.date | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ record.status }}</td>
+          <td>{{ record.present_days }}</td>
+          <td>{{ record.absent_days }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
