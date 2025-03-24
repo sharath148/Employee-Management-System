@@ -51,3 +51,21 @@ A full-stack web application to manage employees, track daily attendance, and vi
 -cd employee_frontend
 -npm install
 -ng serve
+
+🔧 Backend Setup
+bash
+Copy
+Edit
+cd employee_backend  
+npm install  
+node app.js  
+✅ Make sure PostgreSQL is running and your .env file contains the correct database credentials.
+
+💻 Frontend Setup
+bash
+Copy
+Edit
+cd employee_frontend  
+npm install  
+ng serve  
+✅ The Angular app will typically run at: http://localhost:4200/
